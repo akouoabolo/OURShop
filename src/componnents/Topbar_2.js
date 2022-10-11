@@ -1,6 +1,6 @@
 import React from "react";
 
-const Topbar2 = () => {
+const Topbar2 = (props) => {
   return (
     <div className="shop">
       <h1 style={{ fontSize: "30px", fontWeight: "bold" }}>
@@ -19,8 +19,8 @@ const Topbar2 = () => {
         </a>
       </div>
       <div className="bask">
-        <i class="fa-sharp fa-solid fa-cart-shopping">
-          <span id="count">0</span>
+        <i className="fa-sharp fa-solid fa-cart-shopping">
+          <span id="count"> {props.count} </span>
         </i>
       </div>
     </div>

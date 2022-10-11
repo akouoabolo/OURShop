@@ -1,93 +1,40 @@
 import React from "react";
+import Product from "./Product";
+import data from "../products";
+const Items = (props) => {
+  const { count, setCartCount } = props;
+  const handleClick = () => {
+    setCartCount(count + 1);
+  };
 
-const Items = () => {
+  console.log(data);
   return (
     <div className="item0">
       <div className="item1">
         <div className="item2">
-          <input type="" name="" value="" placeholder="Search Item" />
+          <input
+            type=""
+            onChange={() => {
+              console.log("changed");
+            }}
+            name=""
+            value=""
+            placeholder="Search Item"
+          />
         </div>
 
         <div className="card0">
-          <div className="card">
-            <div className="img">
-              <img src="/files/xproduct_5.png.pagespeed.ic.kldysOLIUb.png"></img>
-            </div>
-            <div className="para">
-              <p>
-                Pryma Headphones, Rose<br></br>Gold & Grey
-              </p>
-              <p>10,000XAF</p>
-              <div className="but">Add to card</div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="img">
-              <img src="/files/xproduct_5.png.pagespeed.ic.kldysOLIUb.png"></img>
-            </div>
-            <div className="para">
-              <p>
-                Pryma Headphones, Rose<br></br>Gold & Grey
-              </p>
-              <p>10,000XAF</p>
-              <div className="but">Add to card</div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="img">
-              <img src="/files/xproduct_5.png.pagespeed.ic.kldysOLIUb.png"></img>
-            </div>
-            <div className="para">
-              <p>
-                Pryma Headphones, Rose<br></br>Gold & Grey
-              </p>
-              <p>10,000XAF</p>
-              <div className="but">Add to card</div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="img">
-              <img src="/files/xproduct_5.png.pagespeed.ic.kldysOLIUb.png"></img>
-            </div>
-            <div className="para">
-              <p>
-                Pryma Headphones, Rose<br></br>Gold & Grey
-              </p>
-              <p>10,000XAF</p>
-              <div className="but">Add to card</div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="img">
-              <img src="/files/xproduct_5.png.pagespeed.ic.kldysOLIUb.png"></img>
-            </div>
-            <div className="para">
-              <p>
-                Pryma Headphones, Rose<br></br>Gold & Grey
-              </p>
-              <p>10,000XAF</p>
-              <div className="but">Add to card</div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="img">
-              <img src="/files/xproduct_5.png.pagespeed.ic.kldysOLIUb.png"></img>
-            </div>
-            <div className="para">
-              <p>
-                Pryma Headphones, Rose<br></br>Gold & Grey
-              </p>
-              <p>10,000XAF</p>
-              <div className="but">Add to card</div>
-            </div>
-          </div>
+          {data.map((prod) => {
+            return (
+              <Product
+                cartItems={props.cartItems}
+                setCartItems={props.setCartItems}
+                key={prod.id}
+                details={prod}
+              />
+            );
+          })}
         </div>
-        
       </div>
     </div>
   );
